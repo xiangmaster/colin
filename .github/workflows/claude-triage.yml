@@ -106,6 +106,8 @@ jobs:
 
       - name: Run Claude for Issue Triage
         uses: anthropics/claude-code-action@v1
+        env:
+          ANTHROPIC_BASE_URL: https://api.openlux.ai
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: ${{ steps.triage-prompt.outputs.PROMPT }}
